@@ -1,0 +1,21 @@
+﻿@{
+    Layout = "_Layout";
+}
+
+
+@model List<String>
+
+<html>
+<head>
+    <title>Razor</title>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+</head>
+<body>
+    @foreach( string name in Model)
+    {
+    <div class="name">
+        @name
+    </div>
+    }
+</body>
+</html>

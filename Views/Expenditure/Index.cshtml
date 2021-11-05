@@ -1,0 +1,40 @@
+﻿@model List<Razor_mvc.Expenditure>;
+
+@{
+    ViewData["Title"] = "View";
+    Layout = "_Layout";
+}
+
+<h1>View</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nom</th>
+            <th>Date</th>
+            <th>Prix</th>
+
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @item.nom
+            </td>
+            <td>
+                @item.date
+            </td>
+            <td>
+                @item.prix €             </td>
+        </tr>
+}
+           <tr>
+                <td></td>
+               <td>Total</td>
+                <td> @Model.Sum(x => x.prix) €</td>
+           </tr> 
+               
+
+    </tbody>
+</table>
